@@ -7,5 +7,5 @@ import react from '@vitejs/plugin-react'
 // If you deploy to Vercel/Netlify instead, leave base as '/'.
 export default defineConfig({
   plugins: [react()],
-  base: '/',
+  base: '/portfolio/',
 })
