@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 function NetworkMotif() {
   // Subtle node-and-line graphic echoing "networks & communication systems"
   return (
@@ -112,6 +114,7 @@ const languages = [
 
 export default function App() {
   const cvHref = `${import.meta.env.BASE_URL}Shadia_Amani_CV.pdf`
+  const [menuOpen, setMenuOpen] = useState(false)
 
   return (
     <>
@@ -120,25 +123,22 @@ export default function App() {
           <a className="nav-mark" href="#top">
             Shadia Amani
           </a>
-          <ul className="nav-links">
-            <li>
-              <a href="#about">About</a>
-            </li>
-            <li>
-              <a href="#skills">Skills</a>
-            </li>
-            <li>
-              <a href="#projects">Projects</a>
-            </li>
-            <li>
-              <a href="#experience">Experience</a>
-            </li>
-            <li>
-              <a href="#education">Education</a>
-            </li>
-            <li>
-              <a href="#contact">Contact</a>
-            </li>
+          <button
+            className="nav-toggle"
+            aria-label="Toggle menu"
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen((o) => !o)}
+          >
+            <span /><span /><span />
+          </button>
+          <ul className={`nav-links${menuOpen ? ' nav-links--open' : ''}`}>
+            {['about','skills','projects','experience','education','contact'].map((id) => (
+              <li key={id}>
+                <a href={`#${id}`} onClick={() => setMenuOpen(false)}>
+                  {id.charAt(0).toUpperCase() + id.slice(1)}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
       </nav>
