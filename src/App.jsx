@@ -80,7 +80,7 @@ const education = [
     year: '2023 — Present',
     title: 'BSc Information Technology — Networks & Communication Systems',
     place: 'Adventist University of Central Africa (AUCA), Kigali, Rwanda',
-    note: 'Overall GPA 13.19/20 · Major GPA 13.01/20 (Second Class Honours, Upper Division)',
+
   },
 ]
 
@@ -206,10 +206,6 @@ export default function App() {
                 <li>
                   <span>School</span>
                   <span>AUCA</span>
-                </li>
-                <li>
-                  <span>GPA</span>
-                  <span>13.19/20 overall</span>
                 </li>
                 <li>
                   <span>Open to</span>
